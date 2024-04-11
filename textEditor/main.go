@@ -50,6 +50,8 @@ func main() {
 			strArr = strings.Fields(str)
 		}
 	}
+
+	str = goreloaded.Vowel(strArr)
 	for _, v := range str {
 		if unicode.IsPunct(v) {
 			str = goreloaded.Punctuation(str)
