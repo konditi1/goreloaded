@@ -17,11 +17,23 @@ func main() {
 	// destFile := os.Args[2]
 
 	file, err := os.ReadFile(sourceFile)
+
 	if err != nil {
 		fmt.Println("Error! Could not read file", err)
 	}
 	str := string(file)
 	strArr := strings.Split(string(str), " ")
+
+	str = goreloaded.Vowel(strArr)
+
+	for _, v := range str {
+		if unicode.IsPunct(v) {
+			str = goreloaded.Punctuation(str)
+		}
+	}
+
+	str = goreloaded.Regex2(str)
+	strArr = strings.Fields(str)
 
 	for _, v := range strArr {
 		if v == "(up)" || v == "(up)," || v == "(up)." || v == "(up)!" || v == "(up)?" {
@@ -51,7 +63,7 @@ func main() {
 		}
 	}
 
-	str = goreloaded.Vowel(strArr)
+	
 	for _, v := range str {
 		if unicode.IsPunct(v) {
 			str = goreloaded.Punctuation(str)
