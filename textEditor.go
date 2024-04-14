@@ -52,6 +52,7 @@ func TextEditor(str string) string {
 			str = Punctuation(str)
 		}
 	}
+	
 
 	regexp := Regex(str)
 

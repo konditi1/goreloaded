@@ -1,6 +1,7 @@
 package goreloaded
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -41,17 +42,21 @@ func IndexCap(strArr []string) string {
 		if c == "(cap," {
 			next = strArr[i+1]
 			integer, _ := strconv.Atoi(next[:len(next)-1])
-			tocap := strArr[i-integer : i]
 
-			for in, v := range tocap {
-				tocap[in] = Cap(v)
+			if integer < i {
+				tocap := strArr[i-integer : i]
+				for in, v := range tocap {
+					tocap[in] = Cap(v)
+				}
+			} else {
+				fmt.Printf("The format index %d is longer than the words to format %d\n", integer, i)
 			}
 
 		}
 	}
 
 	for _, v := range strArr {
-			if v != "(cap," && v != next {
+		if v != "(cap," && v != next {
 			convertedArray = append(convertedArray, v)
 		}
 	}

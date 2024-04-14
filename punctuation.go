@@ -12,7 +12,7 @@ func Punctuation(str string) string {
 
 	for i, c := range strArr {
 		for _, v := range c {
-			if unicode.IsPunct(v)  {
+			if unicode.IsPunct(v) {
 				punct += string(v)
 			}
 			if string(c[0]) == punct && i != 0 {
@@ -30,6 +30,8 @@ func Punctuation(str string) string {
 func Regex(str string) string {
 	test := regexp.MustCompile(`'\s+([^']+)'`)
 	str = test.ReplaceAllString(str, " '$1'")
+	re := regexp.MustCompile(`\d+\)`)
+	str = re.ReplaceAllString(str, "")
 
 	return str
 }

@@ -1,6 +1,7 @@
 package goreloaded
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -30,10 +31,14 @@ func IndexUpper(strArr []string) string {
 		if c == "(up," {
 			next = strArr[i+1]
 			integer, _ := strconv.Atoi(next[:len(next)-1])
-			tocap := strArr[i-integer : i]
-
-			for in, v := range tocap {
-				tocap[in] = strings.ToUpper(v)
+			
+			if integer < i {
+				tocap := strArr[i-integer : i]	
+				for in, v := range tocap {
+					tocap[in] = strings.ToUpper(v)
+				}
+			} else {
+				fmt.Printf("The format index %d is longer than the words to format %d\n", integer, i)
 			}
 
 		}

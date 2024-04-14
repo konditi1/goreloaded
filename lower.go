@@ -1,6 +1,7 @@
 package goreloaded
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -30,10 +31,14 @@ func IndexLow(strArr []string) string {
 		if c == "(low," {
 			next = strArr[i+1]
 			integer, _ := strconv.Atoi(next[:len(next)-1])
-			tolow := strArr[i-integer : i]
 
-			for in, v := range tolow {
-				tolow[in] = strings.ToLower(v)
+			if integer < i {
+				tolow := strArr[i-integer : i]
+				for in, v := range tolow {
+					tolow[in] = strings.ToLower(v)
+				}
+			} else {
+				fmt.Printf("The format index %d is longer than the words to format %d\n", integer, i)
 			}
 
 		}
