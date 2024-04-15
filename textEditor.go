@@ -52,9 +52,10 @@ func TextEditor(str string) string {
 			str = Punctuation(str)
 		}
 	}
-	
 
 	regexp := Regex(str)
+	regexp1 := strings.Fields(regexp)
+	regexp = strings.Join(regexp1, " ")
 
 	return regexp
 }

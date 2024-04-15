@@ -26,7 +26,7 @@ func main() {
 
 	if err != nil {
 		fmt.Println()
-	} else {
+	 } else {
 		fmt.Printf("File %s written succesfuly to %s\n",sourceFile, destFile)
 	}
 	
