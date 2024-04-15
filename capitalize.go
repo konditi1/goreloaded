@@ -43,7 +43,7 @@ func IndexCap(strArr []string) string {
 			next = strArr[i+1]
 			integer, _ := strconv.Atoi(next[:len(next)-1])
 
-			if integer < i {
+			if integer <= i {
 				tocap := strArr[i-integer : i]
 				for in, v := range tocap {
 					tocap[in] = Cap(v)

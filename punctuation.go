@@ -28,7 +28,7 @@ func Punctuation(str string) string {
 }
 
 func Regex(str string) string {
-	test := regexp.MustCompile(`'\s+([^']+)'`)
+	test := regexp.MustCompile(`'\s*([^']+)'`)
 	str = test.ReplaceAllString(str, " '$1'")
 	re := regexp.MustCompile(`\d+\)`)
 	str = re.ReplaceAllString(str, "")
