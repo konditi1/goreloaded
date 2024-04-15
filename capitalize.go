@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 )
-
+// Takes a string and returns a string with the first rune capitalized
 func Cap(str1 string) string {
 	newStr := ""
 	for i, v := range str1 {
@@ -19,6 +19,8 @@ func Cap(str1 string) string {
 	return newStr
 }
 
+// Takes a slice of string and returns a string with the letter before (cap)
+// starts with a capital
 func Capitalize(strArr []string) string {
 	var convertedArray []string
 	for i, c := range strArr {
@@ -34,6 +36,7 @@ func Capitalize(strArr []string) string {
 	return (strings.Join(convertedArray, " "))
 }
 
+// Takes a slice of string and returns a string previously specified number of words in upperCase
 func IndexCap(strArr []string) string {
 	var convertedArray []string
 	next := ""

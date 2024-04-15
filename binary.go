@@ -4,7 +4,8 @@ import (
 	"strconv"
 	"strings"
 )
-
+// Takes a slice of string and and returns a string with word after bin
+//converted to decimal
 func Binary(strArr []string) string {
 	var convertedArray []string
 	for i, c := range strArr {

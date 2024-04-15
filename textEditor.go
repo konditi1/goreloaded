@@ -4,7 +4,7 @@ import (
 	"strings"
 	"unicode"
 )
-
+// Calls all the function to edit the passed string and returns the edited string
 func TextEditor(str string) string {
 	strArr := strings.Split(string(str), " ")
 

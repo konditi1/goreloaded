@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// Takes a slice of string and returns a string with the letter before (low) to lowerCase
 func Lower(strArr []string) string {
 	var convertedArray []string
 	for i, c := range strArr {
@@ -22,7 +23,7 @@ func Lower(strArr []string) string {
 
 	return (strings.Join(convertedArray, " "))
 }
-
+// Takes a slice of string and returns a string previously specified number of words in lowerCase
 func IndexLow(strArr []string) string {
 	var convertedArray []string
 	next := ""

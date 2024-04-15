@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// Takes a slice of string and returns a string with the letter before (low) to upperCase
 func Upper(strArr []string) string {
 	var convertedArray []string
 	for i, c := range strArr {
@@ -23,6 +24,7 @@ func Upper(strArr []string) string {
 	return (strings.Join(convertedArray, " "))
 }
 
+// Takes a slice of string and returns a string previously specified number of words in upperCase
 func IndexUpper(strArr []string) string {
 	var convertedArray []string
 	next := ""
