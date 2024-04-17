@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"goreloaded"
+	goreloaded "goreloaded/textEditor"
 )
 
 func main() {
